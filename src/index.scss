@@ -1,0 +1,169 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap/scss/_variables.scss";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: initial;
+  // background-color: #650e0e;
+  background-color: #0b1319;
+}
+
+@media (max-width: 991px) {
+  nav {
+    background: #373c3e;
+    & .navbar-collapse {
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+      top: 57px;
+      left: 0px;
+      padding: 0px 26px;
+      background: #3b4248;
+    }
+  }
+}
+
+nav {
+  background: #373c3e;
+  & .navbar-brand {
+    color: #f44336 !important;
+  }
+  & .navbar-collapse > div a {
+    background: #3b4248;
+    color: #f44336 !important;
+  }
+}
+
+.App {
+  & .card {
+    margin: 6px 6px;
+    background-color: #e02e21;
+    & .location {
+      color: #fff;
+      background-color: #a22a21;
+      border-color: #dc3545;
+      & a {
+        color: white;
+      }
+    }
+    & .gap {
+      background: white;
+      margin: 30px 4px;
+    }
+    & .couple {
+      font-size: 32px;
+      font-family: cursive;
+      font-weight: 900;
+      color: #000000;
+    }
+    & .couple-text {
+      font-size: 24px;
+      font-family: cursive;
+      font-weight: 600;
+      color: #000000;
+    }
+    & .image-container {
+      position: relative;
+      border: 1px solid #f44336;
+      box-shadow: 2px 12px 28px;
+      border-radius: 10px;
+      background-color: #0c0c0c !important;
+      background-image: url("./images/giphy.gif");
+      background-size: contain;
+      width: 96%;
+      margin: 5px auto;
+      & .content {
+        position: absolute;
+        width: 100%;
+        color: white;
+        text-align: center;
+        top: calc(35% - 18px);
+        font-size: 26px;
+        & .txt {
+          font-size: 30px;
+          color: #ffcdbb;
+        }
+      }
+    }
+    & .card-body {
+      padding-bottom: 0;
+      & .card-title {
+        font-size: 25px;
+        font-weight: 600;
+        color: #000000;
+      }
+      & .card-text {
+        font-size: 18px;
+        font-weight: 500;
+        color: #000000;
+      }
+    }
+    & .wedding-container {
+      & .wedding-card {
+        & hr {
+          background: white;
+          margin-top: 8px;
+        }
+        color: #f44336;
+        background: #000000;
+      }
+    }
+    & .count-down-container {
+      background: black;
+      margin: 4px 20px;
+      & h2 {
+        color: #f44336;
+      }
+      & hr {
+        background: white;
+        width: 94%;
+        margin-top: 8px;
+      }
+      & .count-down {
+        font-family: sans-serif;
+        color: #fff;
+        display: inline-block;
+        font-weight: 100;
+        text-align: center;
+        font-size: 30px;
+        width: 100%;
+        & .block {
+          padding: 6px;
+          border-radius: 3px;
+          background: #f44336;
+          display: inline-block;
+          & span {
+            padding: 15px;
+            border-radius: 3px;
+            background: #a22a21;
+            display: inline-block;
+            min-width: 64px;
+          }
+          & .smalltext {
+            padding-top: 5px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    & .time-line-container {
+      & .time-line-header {
+        background: black;
+        color: #f44336;
+        margin: 0 10px;
+        & h5 {
+          font-size: 25px;
+          font-weight: 600;
+          color: #f44336;
+        }
+      }
+      & .vertical-timeline::before {
+        background: black !important;
+      }
+    }
+  }
+}
