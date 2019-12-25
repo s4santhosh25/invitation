@@ -1,65 +1,19 @@
-import React, { Component } from "react";
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+// import React, { Component } from "react";
 
-class MapContainer extends Component {
-    state = {
-        showingInfoWindow: false,
-        activeMarker: {},
-        selectedPlace: {},
-        position: undefined
-    };
+// class MapContainer extends Component {
+//     render() {
+//         return (
+//             <React.Fragment>
+//                 <iframe
+//                     width="600"
+//                     height="450"
+//                     frameBorder="0" style={{ border: "0" }}
+//                     src="https://www.google.com/maps/place/SHRI+MARIAMMAN+THIRU+KOVIL/@9.4259965,78.201379,16z/data=!4m5!3m4!1s0x3b013eaedb7f1473:0x2f3f02ea00fcc7a3!8m2!3d9.4281143!4d78.2100445"
+//                     allowFullScreen>
+//                 </iframe>
+//             </React.Fragment>
+//         )
+//     }
+// }
 
-    onMarkerClick = (props, marker, e) =>
-        this.setState({
-            selectedPlace: props,
-            activeMarker: marker,
-            showingInfoWindow: true
-        });
-
-    onMapClicked = (props) => {
-        if (this.state.showingInfoWindow) {
-            this.setState({
-                showingInfoWindow: false,
-                activeMarker: null
-            })
-        }
-    };
-
-    componentDidMount() {
-        navigator.geolocation.getCurrentPosition(position => {
-            console.log('map', position)
-            this.setState({
-                position
-            })
-        }
-        )
-    }
-
-    render() {
-        const { position } = this.state;
-        return (
-            <React.Fragment>
-                {position && <Map google={this.props.google}
-
-                    initialCenter={{
-                        lat: position ? position.coords.latitude : 0,
-                        lng: position ? position.coords.longitude : 0
-                    }}>
-                    <Marker onClick={this.onMarkerClick} name={'Current location'} />
-
-                    <InfoWindow
-                        marker={position}
-                        visible={true}>
-                        <div>
-                            <h1>{this.state.selectedPlace.name}</h1>
-                        </div>
-                    </InfoWindow>
-                </Map>}
-            </React.Fragment>
-        )
-    }
-}
-
-export default GoogleApiWrapper({
-    apiKey: "AIzaSyCXbFJsFnT48tbM4rRPfZW4hSTuQlFaxRg"
-})(MapContainer)
+// export default MapContainer

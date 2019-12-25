@@ -1,6 +1,7 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { ScaleLoader } from 'react-spinners';
 import { css } from '@emotion/core';
+import { connect } from 'react-redux'
 
 const CardComponent = lazy(() => {
     return new Promise(resolve => {
@@ -24,12 +25,20 @@ class CardContainer extends Component {
 
     render() {
         return (
-            <Suspense fallback={<ScaleLoader css={override} color="red" />}>
-                <CardComponent />
+            <Suspense fallback={<ScaleLoader css={override} color={this.props.store.theme.themeColor} />}>
+                <CardComponent {...this.props} />
             </Suspense>
         );
     }
 
 }
 
-export default CardContainer;
+const mapStateToProps = (state) => {
+    return {
+        store: state
+    }
+}
+
+export default connect(
+    mapStateToProps
+)(CardContainer)

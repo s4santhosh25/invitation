@@ -9,16 +9,16 @@ class Card extends Component {
     renderer = ({ days, hours, minutes, seconds, completed }) => {
         if (completed) {
             return <div className="count-down">
-                <div className="mt-1 ml-1 block">
-                    <span className="days">Time up!</span>
+                <div className={`mt-1 ml-1 block ${this.props.store.theme.mode}`}>
+                    <span className={`days ${this.props.store.theme.mode}`}>Time up!</span>
                     <div className="smalltext">Time</div>
                 </div>
             </div>
         } else {
             return (
                 <div className="count-down">
-                    {[...new Array(4)].map((item, index) => (<div className="mt-1 ml-1 block" key={index}>
-                        <span className="days">{index === 0 ? days : index === 1 ? hours : index === 2 ? minutes : seconds}</span>
+                    {[...new Array(4)].map((item, index) => (<div className={`mt-1 ml-1 block ${this.props.store.theme.mode}`} key={index}>
+                        <span className={`days ${this.props.store.theme.mode}`}>{index === 0 ? days : index === 1 ? hours : index === 2 ? minutes : seconds}</span>
                         <div className="smalltext">{index === 0 ? 'Days' : index === 1 ? 'Hours' : index === 2 ? 'Minutes' : 'Seconds'}</div>
                     </div>))}
                 </div>)
@@ -26,19 +26,22 @@ class Card extends Component {
     };
 
     render() {
+        const { mode, timeLineIconStyle, timeLineContentStyle } = this.props.store.theme;
         return (
             <div className="App" >
-                <div className="card">
-                    <div className="image-container">
-                        <img className="card-img-top" src={require('./images/heart.png')} alt="heart" />
+                <div className={`card ${mode}`}>
+                    <div className={`image-container ${mode}`}>
+                        <img className="card-img-top" src={mode === "light" ? require('./images/blue_heart.png') : require('./images/heart.png')} alt="heart" />
                         <div className="content">
-                            <div className="txt">Preethi</div>
-                            <div className="txt">Weds</div>
-                            <div className="txt">Vignesh</div>
+                            <div className={`txt ${mode}`}>Preethi</div>
+                            <div className={`txt ${mode}`}>Weds</div>
+                            <div className={`txt ${mode}`}>Vignesh</div>
                         </div>
                     </div>
                     <div className="row justify-content-center mt-4 ml-3 mr-3">
-                        <h3 className="header-couple-names text-center h1-responsive couple">Preethi &amp; Vignesh</h3>
+                        <h3 className="header-couple-names text-center h1-responsive couple">
+                            Preethi &amp; Vignesh
+                        </h3>
                     </div>
                     <div className="row justify-content-center mt-1 ml-3 mr-3">
                         <h5 className="header-invitation-text text-center h3-responsive couple-text">
@@ -46,22 +49,27 @@ class Card extends Component {
                         </h5>
                     </div>
                     <hr className="gap" />
+                    <a href="#countdown" name="countdown" style={{ margin: "0 auto" }}>
+                        <span className="main-event-icon fa fa-clock-o" style={{ fontSize: "48px", margin: "0 auto", color: "black" }}>
+                        </span>
+                    </a>
                     <div className="count-down-container pb-3 mt-3">
                         <div className="row justify-content-center ml-3 mr-3">
-                            <h2 className="header-invitation-text text-center h2-responsive mb-0 mt-2">
-                                <a className="header-invitation-text" name="countdown">Wedding Countdown</a></h2>
+                            <h2 className={`header-invitation-text text-center h2-responsive mb-0 mt-2`}>
+                                <a href="#countdown" className={`header-invitation-text ${mode}`} name="countdown">Wedding Countdown</a></h2>
                         </div>
                         <hr />
                         <Countdown date={new Date('2020-02-26T09:30:00')} renderer={this.renderer} />
                     </div>
+                    <hr className="gap" />
                     <div className="card-body">
-                        <h5 className="card-title"><a className="card-title" name="address">Address</a></h5>
+                        <h5 className="card-title"><a href="#address" className="card-title" name="address">Address</a></h5>
                         <p className="card-text">
                             Door No.1 Jegajeevan ram nagar, agaram main road, camp road, selaiyur, Chennai, Tamil Nadu 600073
                     </p>
                     </div>
                     <div className="wedding-container row justify-content-center ml-1 mr-1">
-                        <div className="wedding-card card pink lighten-1 text-center z-depth-2 justify-content-center m-3 p-2 col-xs-12 col-md-4">
+                        <div className={`wedding-card card pink lighten-1 text-center z-depth-2 justify-content-center m-3 p-2 col-xs-12 col-md-4 ${mode}`}>
                             <div className="card_title">
                                 <h2 className="main-events-title text-center h2-responsive mb-0">Wedding</h2>
                             </div>
@@ -93,15 +101,15 @@ class Card extends Component {
                     <hr className="gap" />
                     <div className="time-line-container">
                         <div className="card-body pt-0 time-line-header">
-                            <h5 className="card-title"><a name="time-line">Time Line</a></h5>
+                            <h5 className={`card-title ${mode}`}><a className={`${mode}`} href="#time-line" name="time-line">Time Line</a></h5>
                         </div>
                         <VerticalTimeline animate={true}>
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--work"
-                                contentStyle={{ background: '#a22a21 ', color: 'white' }}
+                                contentStyle={timeLineContentStyle}
                                 contentArrowStyle={{ borderRight: '7px solid #dddddd' }}
-                                date="Feb 25, 2019"
-                                iconStyle={{ background: '#f44336', color: '#fff' }}
+                                date="Feb 25, 2020"
+                                iconStyle={timeLineIconStyle}
                                 icon={<span className="main-event-icon fa fa-clock-o" style={{ fontSize: "36px", color: "#131111", margin: "2px 5px" }}></span>}>
                                 <h3 className="vertical-timeline-element-title">Engagement</h3>
                                 <h4 className="vertical-timeline-element-subtitle">Reddiapatti Mahal</h4>
@@ -109,10 +117,10 @@ class Card extends Component {
                             </VerticalTimelineElement>
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--work"
-                                contentStyle={{ background: '#a22a21 ', color: 'white' }}
+                                contentStyle={timeLineContentStyle}
                                 contentArrowStyle={{ borderRight: '7px solid #dddddd' }}
-                                date="Feb 26, 2019"
-                                iconStyle={{ background: '#f44336', color: '#fff' }}
+                                date="Feb 26, 2020"
+                                iconStyle={timeLineIconStyle}
                                 icon={<span className="main-event-icon fa fa-clock-o" style={{ fontSize: "36px", color: "#131111", margin: "2px 5px" }}></span>}>
                                 <h3 className="vertical-timeline-element-title">Wedding</h3>
                                 <h4 className="vertical-timeline-element-subtitle">Reddiapatti Mahal</h4>
@@ -121,7 +129,17 @@ class Card extends Component {
                         </VerticalTimeline>
                     </div>
                     <hr className="gap" />
-                    <button type="button" className="btn btn-danger location">
+                    <div className="time-line-container">
+                        <div className="card-body pt-0 time-line-header">
+                            <h5 className={`card-title ${mode}`}><a className={`${mode}`} href="#map" name="location">Location</a></h5>
+                        </div>
+                        <div className="location">
+                            <div className="gmap">
+                                <a href="https://www.google.com/maps/place/SHRI+MARIAMMAN+THIRU+KOVIL/@9.4259965,78.201379,16z/data=!4m5!3m4!1s0x3b013eaedb7f1473:0x2f3f02ea00fcc7a3!8m2!3d9.4281143!4d78.2100445" name="map" >.</a>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" className={`btn btn-danger location ${mode}`}>
                         <Link to="/map" name="map">
                             Location
                         </Link>

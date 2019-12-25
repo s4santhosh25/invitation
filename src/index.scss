@@ -12,6 +12,99 @@ body {
   background-color: #0b1319;
 }
 
+@-moz-keyframes color-change-light {
+  10% {
+    color: #d8dbdc;
+  }
+  50% {
+    color: #72bdd4;
+  }
+  100% {
+    color: #00a0df;
+  }
+}
+@-ms-keyframes color-change-light {
+  10% {
+    color: #d8dbdc;
+  }
+  50% {
+    color: #72bdd4;
+  }
+  100% {
+    color: #00a0df;
+  }
+}
+@-o-keyframes color-change-light {
+  10% {
+    color: #d8dbdc;
+  }
+  50% {
+    color: #72bdd4;
+  }
+  100% {
+    color: #00a0df;
+  }
+}
+@keyframes color-change-light {
+  10% {
+    color: #d8dbdc;
+  }
+  50% {
+    color: #72bdd4;
+  }
+  100% {
+    color: #00a0df;
+  }
+}
+
+@-moz-keyframes color-change-dark {
+  10% {
+    color: #efe8e7;
+  }
+  50% {
+    color: #f08c85;
+  }
+  100% {
+    color: #f44336;
+  }
+}
+
+@-ms-keyframes color-change-dark {
+  10% {
+    color: #efe8e7;
+  }
+  50% {
+    color: #f08c85;
+  }
+  100% {
+    color: #f44336;
+  }
+}
+
+@-o-keyframes color-change-dark {
+  10% {
+    color: #efe8e7;
+  }
+  50% {
+    color: #f08c85;
+  }
+  100% {
+    color: #f44336;
+  }
+}
+
+@keyframes color-change-dark {
+  10% {
+    color: #efe8e7;
+  }
+  50% {
+    color: #f08c85;
+  }
+  100% {
+    color: #f44336;
+  }
+}
+
 @media (max-width: 991px) {
   nav {
     background: #373c3e;
@@ -19,10 +112,39 @@ body {
       position: absolute;
       width: 100%;
       z-index: 2;
-      top: 57px;
+      top: 60px;
       left: 0px;
       padding: 0px 26px;
       background: #3b4248;
+    }
+    & .circle {
+      &.dark {
+        background: #373c3e;
+        & .react-switch-bg {
+          background: #ea6e65 !important;
+        }
+        & .react-switch-handle {
+          background: #f44336 !important;
+        }
+      }
+      &.light {
+        background: #373c3e;
+        & .react-switch-bg {
+          background: rgb(134, 211, 255) !important;
+        }
+        & .react-switch-handle {
+          background: rgb(38, 147, 230) !important;
+        }
+      }
+      height: 12px;
+      width: 12px;
+      border-radius: 25px;
+      position: absolute;
+      right: -16px;
+      top: 12px;
+    }
+    & .navbar-nav {
+      position: relative;
     }
   }
 }
@@ -30,24 +152,95 @@ body {
 nav {
   background: #373c3e;
   & .navbar-brand {
-    color: #f44336 !important;
+    font-size: 22px;
+    // font-weight: 400;
+    // font-family: cursive;
+    &.dark {
+      color: #f44336 !important;
+    }
+    &.light {
+      color: #00a0df !important;
+    }
   }
   & .navbar-collapse > div a {
     background: #3b4248;
-    color: #f44336 !important;
+    &.dark {
+      color: #f44336 !important;
+    }
+    &.light {
+      color: #00a0df !important;
+    }
+  }
+  & .circle {
+    &.dark {
+      background: #373c3e;
+      & .react-switch-bg {
+        background: #ea6e65 !important;
+      }
+      & .react-switch-handle {
+        background: #f44336 !important;
+      }
+    }
+    &.light {
+      background: #373c3e;
+      & .react-switch-bg {
+        background: rgb(134, 211, 255) !important;
+      }
+      & .react-switch-handle {
+        background: rgb(38, 147, 230) !important;
+      }
+    }
+    height: 12px;
+    width: 12px;
+    border-radius: 25px;
+    position: absolute;
+    right: -16px;
+    top: 12px;
+  }
+  & .navbar-nav {
+    position: relative;
   }
 }
 
 .App {
   & .card {
     margin: 6px 6px;
-    background-color: #e02e21;
+    &.dark {
+      background-color: #e02e21;
+    }
+    &.light {
+      background-color: #00a0df;
+    }
     & .location {
       color: #fff;
-      background-color: #a22a21;
-      border-color: #dc3545;
+      &.dark {
+        background-color: #a22a21;
+        border-color: #dc3545;
+      }
+      &.light {
+        background-color: #12496b;
+        border-color: #00a0df;
+      }
       & a {
         color: white;
+      }
+      & .gmap {
+        background: url("./images/gmap.png");
+        background-size: cover;
+        width: 70px;
+        margin-left: 30px;
+        margin-bottom: 10px;
+        height: 70px;
+        border-radius: 15px;
+        & a {
+          // border: 2px solid red;
+          border-radius: 15px;
+          padding: 0 33px;
+          padding-top: 0px;
+          padding-bottom: 49px;
+          margin: -1px;
+          color: #0ea35f;
+        }
       }
     }
     & .gap {
@@ -68,7 +261,12 @@ nav {
     }
     & .image-container {
       position: relative;
-      border: 1px solid #f44336;
+      &.dark {
+        border: 1px solid #f44336;
+      }
+      &.light {
+        border: 1px solid #00a0df;
+      }
       box-shadow: 2px 12px 28px;
       border-radius: 10px;
       background-color: #0c0c0c !important;
@@ -86,10 +284,25 @@ nav {
         & .txt {
           font-size: 30px;
           color: #ffcdbb;
+          &.light {
+            -webkit-animation: color-change-light 3s infinite;
+            -moz-animation: color-change-light 3s infinite;
+            -o-animation: color-change-light 3s infinite;
+            -ms-animation: color-change-light 3s infinite;
+            animation: color-change-light 3s infinite;
+          }
+          &.dark {
+            -webkit-animation: color-change-dark 3s infinite;
+            -moz-animation: color-change-dark 3s infinite;
+            -o-animation: color-change-dark 3s infinite;
+            -ms-animation: color-change-dark 3s infinite;
+            animation: color-change-dark 3s infinite;
+          }
         }
       }
     }
     & .card-body {
+      padding-top: 0;
       padding-bottom: 0;
       & .card-title {
         font-size: 25px;
@@ -108,15 +321,28 @@ nav {
           background: white;
           margin-top: 8px;
         }
-        color: #f44336;
+        &.dark {
+          color: #f44336;
+        }
+        &.light {
+          color: #00a0df;
+        }
         background: #000000;
       }
     }
     & .count-down-container {
       background: black;
       margin: 4px 20px;
+      @media (max-width: 375px) {
+        margin: 4px 0;
+      }
       & h2 {
-        color: #f44336;
+        & a.dark {
+          color: #f44336;
+        }
+        & a.light {
+          color: #00a0df;
+        }
       }
       & hr {
         background: white;
@@ -134,12 +360,22 @@ nav {
         & .block {
           padding: 6px;
           border-radius: 3px;
-          background: #f44336;
+          &.dark {
+            background-color: #e02e21;
+          }
+          &.light {
+            background-color: #00a0df;
+          }
           display: inline-block;
           & span {
             padding: 15px;
             border-radius: 3px;
-            background: #a22a21;
+            &.dark {
+              background-color: #a22a21;
+            }
+            &.light {
+              background-color: #12496b;
+            }
             display: inline-block;
             min-width: 64px;
           }
@@ -158,7 +394,12 @@ nav {
         & h5 {
           font-size: 25px;
           font-weight: 600;
-          color: #f44336;
+          & a.dark {
+            color: #f44336;
+          }
+          & a.light {
+            color: #00a0df;
+          }
         }
       }
       & .vertical-timeline::before {
