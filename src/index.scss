@@ -12,6 +12,30 @@ body {
   background-color: #0b1319;
 }
 
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+  transform: translate(0, -50px);
+  position: absolute;
+  bottom: 22%;
+  right: 2%;
+  left: 2%;
+  top: 40%;
+}
+
+.modal.dark {
+  .modal-content {
+    color: black;
+    background-color: #e02e21;
+  }
+}
+
+.modal.light {
+  .modal-content {
+    color: black;
+    background-color: #00a0df !important;
+  }
+}
+
 @-moz-keyframes color-change-light {
   10% {
     color: #d8dbdc;
@@ -406,5 +430,51 @@ nav {
         background: black !important;
       }
     }
+    & .contact {
+      position: fixed;
+      bottom: -50px;
+      right: 15px;
+      height: 70px;
+      width: 70px;
+      border-radius: 50px;
+      padding: 22px 10px;
+      color: white;
+      background-image: url("./images/contact.png");
+      background-size: contain;
+      background-color: white;
+      animation: move-up 1s linear forwards;
+      & div {
+        font-size: 32px;
+        margin: -8px 9px;
+      }
+    }
+  }
+}
+
+@keyframes move-up {
+  to {
+    bottom: 20px; /* final resting position */
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes move-up {
+  to {
+    bottom: 20px; /* final resting position */
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes move-up {
+  to {
+    bottom: 20px; /* final resting position */
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }

@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import Countdown from 'react-countdown-now';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import { Modal, Button } from 'react-bootstrap'
 
 class Card extends Component {
+    state = {
+        show: false
+    };
+
+    handleClose = () => this.setState({ show: false })
+    handleShow = () => this.setState({ show: true })
 
     renderer = ({ days, hours, minutes, seconds, completed }) => {
         if (completed) {
@@ -139,12 +145,26 @@ class Card extends Component {
                             </div>
                         </div>
                     </div>
-                    <button type="button" className={`btn btn-danger location ${mode}`}>
+                    {/* <button type="button" className={`btn btn-danger location ${mode}`}>
                         <Link to="/map" name="map">
                             Location
                         </Link>
-                    </button>
+                    </button> */}
+                    <div className={`contact ${mode}`} onClick={this.handleShow}>
+                        <div className="glyphicon glyphicon-phone"></div>
+                    </div>
                 </div>
+                <Modal className={mode} show={this.state.show} onHide={this.handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Contact</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Praveen - 6380520546</Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={this.handleClose}>
+                            Close
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
             </div >
         );
     }
