@@ -47,7 +47,7 @@ class Card extends Component {
                     <div className="row justify-content-center mt-4 ml-3 mr-3">
                         <h3 className="header-couple-names text-center h1-responsive couple">
                             Preethi &amp; Vignesh
-                        </h3>`
+                        </h3>
                     </div>
                     <div className="row justify-content-center mt-1 ml-3 mr-3">
                         <h5 className="header-invitation-text text-center h3-responsive couple-text">
@@ -163,7 +163,36 @@ class Card extends Component {
                     <Modal.Header closeButton>
                         <Modal.Title>Contact</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Praveen - 6380520546</Modal.Body>
+                    <Modal.Body>
+                        <div className="whatsup-container">
+                            <div className="card1">
+                                <span className="title">Santhosh</span>
+                                <div className="whatsup">
+                                    <a href="tel:9003156303" name="mobile" >.</a>
+                                </div>
+                            </div>
+                            <div className="card1 right">
+                                <span className="title">Praveen</span>
+                                <div className="whatsup">
+                                    <a href="tel:+6581540526" name="mobile" >.</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="whatsup-container">
+                            <div className="card1">
+                                <span className="title">Thuthish</span>
+                                <div className="whatsup">
+                                    <a href="tel:7550190676" name="mobile" >.</a>
+                                </div>
+                            </div>
+                            <div className="card1 right">
+                                <span className="title">Abilash</span>
+                                <div className="whatsup">
+                                    <a href="tel:8939611047" name="mobile" >.</a>
+                                </div>
+                            </div>
+                        </div>
+                    </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={this.handleClose}>
                             Close

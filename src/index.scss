@@ -455,6 +455,44 @@ nav {
   }
 }
 
+.modal-content {
+  & .modal-header {
+    & .modal-title {
+      font-size: 28px;
+      font-weight: 500;
+    }
+  }
+  & .modal-body {
+    & .whatsup-container {
+      margin-bottom: 6px;
+      & .title {
+        font-size: 20px;
+        font-family: cursive;
+        font-weight: 900;
+      }
+      .whatsup {
+        background-image: url("./images/whatsup.png");
+        display: inline-block;
+        background-size: cover;
+        width: 42px;
+        margin-left: 6px;
+        font-size: 26px;
+        & a {
+          padding: 4px 15px;
+          color: transparent;
+          text-decoration: none;
+        }
+      }
+      & .card1 {
+        display: inline-block;
+        &.right {
+          float: right;
+        }
+      }
+    }
+  }
+}
+
 @keyframes move-up {
   to {
     bottom: 20px; /* final resting position */
