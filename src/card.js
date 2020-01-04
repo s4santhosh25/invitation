@@ -47,7 +47,7 @@ class Card extends Component {
                     <div className="row justify-content-center mt-4 ml-3 mr-3">
                         <h3 className="header-couple-names text-center h1-responsive couple">
                             Preethi &amp; Vignesh
-                        </h3>
+                        </h3>`
                     </div>
                     <div className="row justify-content-center mt-1 ml-3 mr-3">
                         <h5 className="header-invitation-text text-center h3-responsive couple-text">
@@ -65,14 +65,19 @@ class Card extends Component {
                                 <a href="#countdown" className={`header-invitation-text ${mode}`} name="countdown">Wedding Countdown</a></h2>
                         </div>
                         <hr />
-                        <Countdown date={new Date('2020-02-26T09:30:00')} renderer={this.renderer} />
+                        <Countdown date={new Date('2020-02-26T07:30:00')} renderer={this.renderer} />
                     </div>
                     <hr className="gap" />
-                    <div className="card-body">
-                        <h5 className="card-title"><a href="#address" className="card-title" name="address">Address</a></h5>
+                    {/* <div className="card-body">
+                        <h5 className="card-title address"><a href="#address" className="card-title" name="address">Address</a></h5>
                         <p className="card-text">
-                            Door No.1 Jegajeevan ram nagar, agaram main road, camp road, selaiyur, Chennai, Tamil Nadu 600073
+                            Door No.1 Jegajeevan ram nagar, agaram main road, camp road, selaiyur, Chennai, Tamil Nadu 626118
                     </p>
+                    </div> */}
+                    <div className="time-line-container">
+                        <div className="card-body pt-0 time-line-header">
+                            <h5 className={`card-title ${mode}`}><a className={`${mode}`} href="#address" name="address">Address</a></h5>
+                        </div>
                     </div>
                     <div className="wedding-container row justify-content-center ml-1 mr-1">
                         <div className={`wedding-card card pink lighten-1 text-center z-depth-2 justify-content-center m-3 p-2 col-xs-12 col-md-4 ${mode}`}>
@@ -87,7 +92,7 @@ class Card extends Component {
                                         <br />
                                         <br />
                                         <span className="white-text text-monospace font-weight-bold h5-responsive mt-2">
-                                            09:30 AM</span>
+                                            07:30 AM - 09:15 AM</span>
                                     </div>
                                     <div className="col-6 justify-content-center">
                                         <span className="main-event-icon fa fa-calendar" style={{ fontSize: "26px" }} ></span>
@@ -99,7 +104,7 @@ class Card extends Component {
                                     <br />
                                 </div>
                                 <p className="white-text h5-responsive mt-4 mb-2 ml-2 mr-2">
-                                    Reddiapatti Mahal
+                                    Reddiapatti R.V Mahal
                                 </p>
                             </div>
                         </div>
@@ -118,8 +123,8 @@ class Card extends Component {
                                 iconStyle={timeLineIconStyle}
                                 icon={<span className="main-event-icon fa fa-clock-o" style={{ fontSize: "36px", color: "#131111", margin: "2px 5px" }}></span>}>
                                 <h3 className="vertical-timeline-element-title">Engagement</h3>
-                                <h4 className="vertical-timeline-element-subtitle">Reddiapatti Mahal</h4>
-                                <p>10.00 AM</p>
+                                <h6 className="vertical-timeline-element-subtitle">Reddiapatti R.V Mahal</h6>
+                                <p>05.30 PM - 06.30 PM</p>
                             </VerticalTimelineElement>
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--work"
@@ -129,8 +134,8 @@ class Card extends Component {
                                 iconStyle={timeLineIconStyle}
                                 icon={<span className="main-event-icon fa fa-clock-o" style={{ fontSize: "36px", color: "#131111", margin: "2px 5px" }}></span>}>
                                 <h3 className="vertical-timeline-element-title">Wedding</h3>
-                                <h4 className="vertical-timeline-element-subtitle">Reddiapatti Mahal</h4>
-                                <p>09.30 AM</p>
+                                <h6 className="vertical-timeline-element-subtitle">Reddiapatti R.V Mahal</h6>
+                                <p>07.30 AM - 09.15 AM</p>
                             </VerticalTimelineElement>
                         </VerticalTimeline>
                     </div>
@@ -141,7 +146,7 @@ class Card extends Component {
                         </div>
                         <div className="location">
                             <div className="gmap">
-                                <a href="https://www.google.com/maps/place/SHRI+MARIAMMAN+THIRU+KOVIL/@9.4259965,78.201379,16z/data=!4m5!3m4!1s0x3b013eaedb7f1473:0x2f3f02ea00fcc7a3!8m2!3d9.4281143!4d78.2100445" name="map" >.</a>
+                                <a href="https://maps.app.goo.gl/MJjrQWcr1NyJukMW6" name="map" >.</a>
                             </div>
                         </div>
                     </div>
