@@ -68,15 +68,12 @@ class Card extends Component {
                         <Countdown date={new Date('2020-02-26T07:30:00')} renderer={this.renderer} />
                     </div>
                     <hr className="gap" />
-                    {/* <div className="card-body">
-                        <h5 className="card-title address"><a href="#address" className="card-title" name="address">Address</a></h5>
-                        <p className="card-text">
-                            Door No.1 Jegajeevan ram nagar, agaram main road, camp road, selaiyur, Chennai, Tamil Nadu 626118
-                    </p>
-                    </div> */}
                     <div className="time-line-container">
                         <div className="card-body pt-0 time-line-header">
                             <h5 className={`card-title ${mode}`}><a className={`${mode}`} href="#address" name="address">Address</a></h5>
+                        </div>
+                        <div className="address">
+                            R.V Mahal, M.R.PUDUR, M.Reddiapatti, Aruppukottai (Taluk)
                         </div>
                     </div>
                     <div className="wedding-container row justify-content-center ml-1 mr-1">

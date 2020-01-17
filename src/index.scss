@@ -426,6 +426,13 @@ nav {
           }
         }
       }
+      & .address {
+        font-size: 18px;
+        font-weight: 500;
+        color: #000000;
+        margin: 0 2px;
+        text-align: center;
+      }
       & .vertical-timeline::before {
         background: black !important;
       }
